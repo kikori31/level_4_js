@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>클래스제어_조건문 기초</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script src="./scripts/class_if.js" defer></script>
+    <style>
+        .target_showHide {display:none;}
+        .design_set1 {
+            border-bottom:1px solid #000 ;
+            background-color: #ff0;
+            padding: 15px 6px;
+        }
+        .like_active{
+            color:coral !important;
+            background:rgb(49, 49, 49) !important; /* 클래스보다 id가 우선순위가 높아서 먼저 적용하려면 !important를 넣어야 한다. */
+        }
+        #like_btn {
+            width:30px; height:30px;
+            border-radius: 50%; background: #eee; color:#888;
+        }
+    </style>
+</head>
+<body>
+    <ul class="contents">
+        <li><a href="#">내용1</a></li>
+        <li><a href="#">내용2</a></li>
+        <li><a href="#">내용3</a></li>
+        <li><a href="#">내용4</a></li>
+    </ul>
+    <hr>
+    <button type="button" id="search_btn">검색</button>
+    <div class="search_open_wrap">
+        <input type="text" name="search_txt" id="search_txt">
+        <button type="submit" id="search_txt_btn">검색하기</button>
+    </div>
+    <hr>
+    <button type="button" id="like_btn">♥</button>
+    <hr>
+    <button type="button" id="print_btn">인쇄</button>
+</body>
+</html>
