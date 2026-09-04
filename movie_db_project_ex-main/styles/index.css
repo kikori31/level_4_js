@@ -8,3 +8,38 @@ main .movie_wrap1 li {width:33.33%;}
 /* 상영예정 */
 main .movie_wrap2{display:flex; flex-flow:row wrap;}
 main .movie_wrap2 li{width:30%;}
+
+/* 2026 무비차트 */
+.chart {}
+.chart .chart_swiper {}
+.chart .chart_swiper .swiper-wrapper {}
+.chart .chart_swiper .swiper-wrapper .swiper-slide {
+    height:300px; 
+    background-size: cover; background-position: center;
+    display: flex; flex-flow:column nowrap; justify-content: flex-end;
+}
+.chart .chart_swiper .swiper-wrapper .swiper-slide::after {
+    content:''; display:block; width:100%; height:40%;
+    position: absolute; left:0; bottom:0;
+    background: rgba(255,255,255,0.8);
+}
+.chart .chart_swiper .swiper-wrapper .swiper-slide > * {
+    position: relative; z-index:100;
+}
+
+/* 애니메이션 차트 */
+.chart .ani_swiper {}
+.chart .ani_swiper .swiper-wrapper {}
+.chart .ani_swiper .swiper-wrapper .swiper-slide {
+    height:300px; 
+    background-size: cover; background-position: center;
+    display: flex; flex-flow:column nowrap; justify-content: flex-end;
+}
+.chart .ani_swiper .swiper-wrapper .swiper-slide::after {
+    content:''; display:block; width:100%; height:40%;
+    position: absolute; left:0; bottom:0;
+    background: rgba(255,255,255,0.8);
+}
+.chart .ani_swiper .swiper-wrapper .swiper-slide >* {
+    position: relative; z-index:100;
+}
