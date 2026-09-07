@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 종류와 활용</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        /* 내부 스타일 시트 */
+    </style>
+</head>
+<body>
+    <!-- 태그 작성 위치 -->
+    <h1>while</h1>
+    <p>while문은 반복횟수가 정해져있지 않을 때 사용</p>
+    <p>조건식은 while () 안에 쓰고 증감식은 {}안에 작성, 초기값은 밖</p>
+    <input type="text" id="age"  placeholder="나이를 입력하세요">
+
+    <h1>베스트 상품</h1>
+    <section style=" background: yellow;"><!-- 붙이기 --></section>
+    <table id="t" style="background: pink;"></table>
+
+    <script>
+        /* 내부 스크립트위치(내부스크립트는 defer 작성불가) */
+        //while 영화관람연령(12세 이상 관람가)
+        const ageInput = document.querySelector('#age');
+        while(ageInput.value){
+            console.log('test');
+        }
+
+        //while 무한 반복 문제
+        // let cssQ = confirm('상하반전은 scaleY(-1)이다.'); //1번 실행(while 밖)
+        let cssQ = true; //1번 실행(while 밖)
+        while(cssQ == false){
+            console.log('오답입니다.');//멈추는 명령이 따로 없는 한 무한실행(while 안)
+            cssQ = confirm('상하반전은 scaleY(-1)이다.'); //오답일때 재질문
+            // break; //무한 반복을 강제 종료
+        }
+        console.log('정답입니다.');//while문 밖(while문이 거짓이 되어야 만나는 위치)
+
+        //continue문
+        for(var i=0; i<10; i++){
+            continue; //continue 아래구문을 생략하고 반복수행
+            // break; //반복문을 더이상 수행하지 않고 강제 종료
+            console.log('반복'+i);
+        }
+        console.log('종료'+i);
+        //구구단 2~9단
+        for(let i=2; i<=9; i++){
+            for(let j=1; j<10; j++){
+                console.log(`${i}X${j}=${i*j}`);
+            }
+            console.log('-------------');
+        }
+
+        //ul*2-li*5
+        /*  const ul = document.createElement('ul');
+        const li = document.createElement('li');
+        ul.classList.add('product_wrap');
+        li.classList.add('item');
+        console.log(ul,li); */
+
+        const section = document.querySelector('section');
+
+        creatList(3,2)
+        creatList(1,4)
+        function creatList(num1,num2){
+            for(let i=0; i<num1; i++){
+                const ul = document.createElement('ul');
+                ul.classList.add('product_wrap');
+                for(let k=0; k<num2; k++){
+                    const li = document.createElement('li');
+                    li.classList.add('item');
+                    li.textContent = '아메리카노 1500원';
+                    ul.appendChild(li);
+                    // console.log(li);
+                }
+                ul.style.borderBottom = '2px solid #000';
+                section.appendChild(ul);
+                // console.log(ul);
+            }
+        }
+
+        //tr(행) td(내용열)
+        //2행 3열 표
+        const t = document.querySelector('#t');
+
+        creatTable(2,3);
+        function creatTable(tr,td){
+            for(let i=0; i<tr; i++){
+                const tr = document.createElement('tr');
+                tr.classList.add('product_table');
+                for(let k=0; k<td; k++){
+                    const td = document.createElement('td');
+                    td.classList.add('item');
+                    td.textContent = `${k+1}열`;
+                    td.style.border = '1px solid #000';
+                    tr.appendChild(td);
+                }
+                t.appendChild(tr);
+            }
+            
+        }
+    </script>
+</body><!-- body종료위치 -->
+</html>
